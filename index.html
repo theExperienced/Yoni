@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Docsssument</title>
+</head>
+<body>
+    <div class="container">
+        <div class="fold">
+            <a href="#main" class="fold__scroll-to-main"></a>
+            <header class="header">
+                <div class="header__item header__item--logo">יוני זייני</div>
+                <ul class="header__item header__item--nav">
+                    <li class="header__nav-item"><a>מוצרים</a></li>
+                    <li class="header__nav-item"><a>שירותים</a></li>
+                    <li class="header__nav-item"><a>היסטוריה</a></li>
+                    <li class="header__nav-item"><a>מסורת</a></li>
+                    <li class="header__nav-item"><a>זיונים</a></li>
+                </ul>
+            </header>
+            <div class="fold-content">
+                <h1 class="fold__heading">
+                    <span class="fold__heading--up">יוני זייני</span>
+                    <span class="fold__heading--bottom">שירותי זיינות</span>
+                </h1> 
+            </div>
+        </div>
+        <main id="main" class="main">
+            <section class="section section-grid-products">
+                <h2 class="section__heading">המוצרים שלנו</h2>
+                <div class="section__container">
+                    <ul class="product-grid">
+                        <li class="product-grid__item product-grid__item--1"><img class="product-grid__img" src="https://picsum.photos/id/237/600?grayscale" alt=""></li>
+                        <li class="product-grid__item product-grid__item--2"><img class="product-grid__img" src="https://picsum.photos/id/238/600?grayscale" alt=""></li>
+                        <li class="product-grid__item product-grid__item--3"><img class="product-grid__img" src="https://picsum.photos/id/239/600?grayscale" alt=""></li>
+                        <li class="product-grid__item product-grid__item--4"><img class="product-grid__img" src="https://picsum.photos/id/230/600?grayscale" alt=""></li>
+                        <li class="product-grid__item product-grid__item--5"><img class="product-grid__img" src="https://picsum.photos/id/231/600?grayscale" alt=""></li>
+                        <li class="product-grid__item product-grid__item--6"><img class="product-grid__img" src="https://picsum.photos/id/232/600?grayscale" alt=""></li>
+                        <li class="product-grid__item product-grid__item--7"><img class="product-grid__img" src="https://picsum.photos/id/233/600?grayscale" alt=""></li>
+                        <!-- <li class="product-grid__item product-grid__item--1"><div></div></li>
+                        <li class="product-grid__item product-grid__item--2"><div></div></li>
+                        <li class="product-grid__item product-grid__item--3"><div></div></li>
+                        <li class="product-grid__item product-grid__item--4"><div></div></li>
+                        <li class="product-grid__item product-grid__item--5"><div></div></li>
+                        <li class="product-grid__item product-grid__item--6"><div></div></li>
+                        <li class="product-grid__item product-grid__item--7"><div></div></li>
+                        <li class="product-grid__item product-grid__item--8"><div></div></li>
+                        <li class="product-grid__item product-grid__item--9"><div></div></li>
+                        <li class="product-grid__item product-grid__item--10"><div></div></li>
+                        <li class="product-grid__item product-grid__item--11"><div></div></li>
+                        <li class="product-grid__item product-grid__item--12"><div></div></li>
+                        <li class="product-grid__item product-grid__item--13"><div></div></li> -->
+                    </ul>
+                </div>
+
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__rights">כל הזכויות שמורות ליוני זייני &copy</p>
+        </footer>
+    </div>
+
+
+
+
+    <script>
+        const header = document.querySelector('header.header');
+        const fold = document.querySelector('.fold');
+        const foldScrollToMain = document.querySelector('.fold__scroll-to-main');
+
+        // const foldVisibleObserver = new IntersectionObserver((entries, observer) => {
+        //     if (!entries[0].isIntersecting) header.classList.add('sticky-header');
+        //     else header.classList.remove('sticky-header');
+            
+        // });
+        // foldVisibleObserver.observe(fold);
+
+        document.addEventListener('scroll', () => {
+            window.pageYOffset > 50 ? header.classList.add('sticky-header') : header.classList.remove('sticky-header');
+            if (window.pageYOffset > 700)  {
+                foldScrollToMain.classList.add('gone');
+            }
+        });
+
+        foldScrollToMain.addEventListener('click', () => {
+            foldScrollToMain.classList.add('gone');
+            foldScrollToMain.removeEventListener('click');
+        });
+    </script>
+</body>
+</html>

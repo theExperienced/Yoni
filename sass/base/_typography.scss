@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik|Suez+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Bellefair&display=swap');
+
+
+body {
+    
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: $color-gray;
+   
+    @include respond(phone) {
+        
+        // width: 100%;
+    }
+}
+
+.section__heading {
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+    padding: 0 3rem;
+    font-size: 4.5rem;
+    font-weight: 100;
+}
+
+// .heading-primary {
+//     color: $color-white;
+//     text-transform: uppercase;
+//     margin-bottom: 6rem;
+
+//     &--main {
+//         display: block;
+//         font-size: 6rem;
+//         font-weight: 400;
+//         letter-spacing: 3.9rem;
+//         // animation: headingPrimaryMainSlideFromLeft 0.75s ease-in-out forwards;
+
+//         @include respond(tab-port) {
+//             letter-spacing: 3rem;
+//             font-size: 4.5rem;
+//         }
+//     }
+    
+//     &--sub {
+//         display: block;
+//         font-size: 2rem;
+//         font-weight: 700;
+//         letter-spacing: 1.7rem;
+//         // animation: headingPrimarySubSlideFromRight 0.75s ease-in-out forwards;
+        
+//         @include respond(tab-port) {
+//             font-weight: 400;
+//             letter-spacing: 1.3rem;
+//             font-size: 3rem;
+//         }
+//     }
+// }
+
+// .heading-secondary {
+//     font-size: 3.5rem;
+//     font-weight: 700;
+//     display: inline-block;
+//     background-image:  linear-gradient($color-primary-light, $color-primary-dark);
+//     -webkit-background-clip: text;
+//     color: transparent;
+//     text-transform: uppercase;
+//     margin: 0 auto;
+//     margin-bottom: 6rem;
+//     letter-spacing: 2px;
+//     transition: all .2s ease-in;
+    
+//     @include respond(tab-port) {
+//         font-size: 3rem;
+//         padding: 0 5.5rem;
+//     }
+    
+//     @include respond(phone) {
+//         // font-size: 2rem;
+//         padding: 0;///////MAYBE
+//         margin-bottom: 3.5rem;
+//     }
+
+//     &:hover {
+//         transform: skew(15deg, 2deg) rotateX(10deg) scale(1.1);
+//         text-shadow: 0 1.5rem 2rem rgba($color-black, 0.123); 
+//     }
+// }
+
+// .heading-tertiary {
+//     font-size: $default-font-size;
+//     font-weight: 600;
+//     // display: inline-block;
+//     // background-image:  linear-gradient($color-primary-light, $color-primary-dark);
+//     // -webkit-background-clip : text;
+//     // color: tran sparent;
+//     text-transform: uppercase;
+//     // margin: 0 auto;
+//     // letter-spacing: 2px;
+//     // transition: all 0.200612s ease-in;
+
+
+// }
+
+// .paragraph {
+//     font-size: 2rem;
+
+//     &:not(:last-child) {
+        
+//         margin-bottom: 4rem;
+//     }
+// }

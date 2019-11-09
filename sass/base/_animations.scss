@@ -1,0 +1,88 @@
+
+@keyframes headingPrimaryMainSlideFromLeft {
+    0% {
+        transform: translateX(-23%);
+        opacity:0;
+    }80%{
+        transform: translateX(3%);
+    }100% {
+        transform: translateX(0%);
+        opacity:1;
+    }
+} 
+
+
+@keyframes headingPrimarySubSlideFromRight {
+    0% {
+        transform: translateX(23%);
+        opacity:0;
+    }80%{
+        transform: translateX(-3%);
+    }100% {
+        transform: translateX(0%);
+        opacity:1;
+    }
+}
+
+// @keyframes inflating-div-into-appearance-from-left {
+
+//     0% {
+//         clip-path: circle(5% at 0 0 );
+//     }
+//     // 20% {
+//     //     clip-path: circle(65% at 0 0 );
+//     // }65% {
+//     //     clip-path: circle(25% at 0 0 );
+//     // }
+//     100% {
+//         clip-path: circle(150% at 0 0 );
+//     }
+
+// }
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }to {
+        transform: translateY(0);
+    }
+}
+
+// @keyframes turnOnBoxShadow {
+//     from {
+//         box-shadow: 0 0 0 0 black;
+//     }to {
+//         box-shadow: 0 0 6px 1px rgba(0, 0, 0, .3);
+//     }
+// }
+
+@keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    40%,
+    43% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate3d(0, -30px, 0);
+    }
+  
+    70% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate3d(0, -15px, 0);
+    }
+  
+    90% {
+      transform: translate3d(0, -4px, 0);
+    }
+  }
+  
+  .bounce {
+    animation-name: bounce;
+    transform-origin: center bottom;
+  }

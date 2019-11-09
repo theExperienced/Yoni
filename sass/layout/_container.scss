@@ -1,0 +1,9 @@
+.container {
+    // display: grid;
+    // grid-template-columns: 
+    // grid-template-rows: 40vh;
+    
+    // height: 2000px;
+    display: grid;
+    grid-template-rows: minmax(15rem, 100vh) auto   ;
+}
