@@ -81,6 +81,8 @@ ul {
   0% {
     transform: translateX(20%);
     opacity: 0; }
+  50% {
+    opacity: 1; }
   100% {
     transform: translateX(0);
     opacity: 1; } }
@@ -128,44 +130,31 @@ body {
   margin: 0 auto;
   padding: 10rem 0; }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-  grid-auto-rows: 5rem;
-  grid-gap: 1rem;
-  grid-auto-flow: dense; }
-  .product-grid__item {
-    grid-column: span 3;
-    grid-row: span 3; }
-    .product-grid__item--1 {
-      grid-column: span 2;
-      grid-row: span 5; }
-    .product-grid__item--2 {
-      grid-column: span 4;
-      grid-row: span 2; }
-    .product-grid__item--4 {
-      grid-column: span 2;
-      grid-row: span 5; }
-    .product-grid__item--5 {
-      grid-column: span 3;
-      grid-row: span 3; }
-    .product-grid__item--6 {
-      grid-column: span 3;
-      grid-row: span 8; }
-    .product-grid__item--7 {
-      grid-column: span 6;
-      grid-row: span 8; }
-    .product-grid__item--6 {
-      grid-column: span 5;
-      grid-row: span 3; }
-    .product-grid__item--6 {
-      grid-column: span 4;
-      grid-row: span 4; }
-    .product-grid__item img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; }
+.product-grid__item {
+  position: relative;
+  height: 13rem;
+  transition: all 0.2s ease-in;
+  overflow: hidden;
+  margin-bottom: 1rem; }
+  .product-grid__item i {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .1s .2s linear; }
+  .product-grid__item:hover {
+    height: 30rem; }
+    .product-grid__item:hover i {
+      opacity: 1;
+      visibility: visible; }
+  .product-grid__item__content {
+    overflow: hidden; }
+  .product-grid__item img {
+    display: block;
+    object-fit: none; }
 
 .header {
   display: flex;
@@ -183,6 +172,9 @@ body {
       margin-left: auto;
       margin-right: 5vw; }
     .header__item--logo {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
       margin-left: 10vw; }
   .header__nav-item {
     display: flex;
@@ -224,14 +216,15 @@ body {
     transition: none; }
     .header.sticky-header .header__item--nav {
       justify-content: flex-start;
-      color: black; }
+      color: rgba(0, 0, 0, 0.5); }
     .header.sticky-header .header__nav-item {
-      box-shadow: -4px 0 5px -2px #e6e6e6;
       transition: all .15s linear; }
+      .header.sticky-header .header__nav-item:not(:last-child) {
+        box-shadow: -2px 0 5px -2px rgba(0, 0, 0, 0.1); }
       .header.sticky-header .header__nav-item:hover {
         z-index: 200;
-        color: white;
-        background-image: linear-gradient(-115deg, rgba(21, 253, 98, 0.2), rgba(0, 0, 0, 0.1)); }
+        background-color: white;
+        box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.1); }
     .header.sticky-header .header__nav-link {
       transition: all .15s linear; }
       .header.sticky-header .header__nav-link::before {
@@ -263,7 +256,11 @@ body {
     font-family: 'Secular One', sans-serif;
     font-size: 5rem;
     font-weight: 900;
-    padding: .5rem 4rem;
+    padding: 1.5rem 5rem;
+    border-radius: 7px;
+    background-color: #9c938a;
+    border-top: 2px solid rgba(7, 3, 3, 0.35);
+    border-bottom: 2px solid rgba(7, 3, 3, 0.35);
     align-items: center; }
     .fold__heading > * {
       display: block;
@@ -271,13 +268,17 @@ body {
     .fold__heading--up {
       margin: 0 auto;
       padding: 0 2rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.35);
-      color: rgba(0, 0, 0, 0.7); }
+      letter-spacing: 3px;
+      border-bottom: 1px solid rgba(83, 8, 8, 0.35);
+      color: rgba(126, 75, 27, 0.7); }
     .fold__heading--bottom {
-      color: rgba(255, 255, 255, 0.75); }
+      font-weight: 100;
+      color: rgba(200, 226, 207, 0.699); }
   .fold__scroll-to-main {
     position: absolute;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 100px;
     bottom: 2.5rem;
     animation: bounce 1.5s linear infinite forwards;
@@ -287,29 +288,18 @@ body {
     width: 6rem;
     border: 2px solid rgba(255, 255, 255, 0.4);
     transition: all .15s linear; }
+    .fold__scroll-to-main > i {
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: -3px;
+      transition: inherit; }
     .fold__scroll-to-main.gone {
       opacity: 0;
       visibility: hidden; }
     .fold__scroll-to-main:hover {
       animation-play-state: paused;
       border-color: rgba(0, 0, 0, 0.65); }
-      .fold__scroll-to-main:hover::before, .fold__scroll-to-main:hover::after {
-        background-color: rgba(0, 0, 0, 0.65); }
-    .fold__scroll-to-main::after, .fold__scroll-to-main::before {
-      content: '';
-      background: rgba(255, 255, 255, 0.4);
-      position: absolute;
-      top: 50%;
-      border-radius: 100px;
-      transition: all .15s linear;
-      height: 3px;
-      width: 50%; }
-    .fold__scroll-to-main::before {
-      transform: translateX(-50%) rotate(45deg);
-      left: 50%; }
-    .fold__scroll-to-main::after {
-      right: 50%;
-      transform: translateX(50%) rotate(-45deg); }
+      .fold__scroll-to-main:hover > i {
+        color: rgba(0, 0, 0, 0.65); }
 
 .fold-content {
   display: flex;
@@ -335,12 +325,17 @@ body {
     align-items: center;
     transform: translateX(-20%);
     opacity: 0; }
-    .section-three-blocks__block.block-visible {
-      box-shadow: -5px 0 3px -1px rgba(0, 0, 0, 0.35);
-      animation: slide-left 1s ease-out forwards;
-      animation-delay: 0s;
-      animation: slide-left 1s ease-out forwards;
-      animation-delay: 0.2s; }
+    .section-three-blocks__block:not(:first-child) {
+      box-shadow: -8px 0 8px -1px rgba(0, 0, 0, 0.15); }
+    .section-three-blocks__block--1.block-visible {
+      animation: slide-left .85s ease-out forwards;
+      animation-delay: 0s; }
+    .section-three-blocks__block--2.block-visible {
+      animation: slide-left .85s ease-out forwards;
+      animation-delay: 0.3s; }
+    .section-three-blocks__block--3.block-visible {
+      animation: slide-left .85s ease-out forwards;
+      animation-delay: 0.6s; }
     .section-three-blocks__block--1 {
       background-color: #48f782; }
     .section-three-blocks__block--2 {
