@@ -231,8 +231,7 @@ body {
       .header.sticky-header .header__nav-item:hover {
         z-index: 200;
         color: white;
-        background-image: linear-gradient(to right, rgba(72, 247, 130, 0.4), rgba(45, 158, 83, 0.4));
-        box-shadow: 0 0 5px 2px #dbdbdb, 0 0 5px -2px #dbdbdb; }
+        background-image: linear-gradient(-115deg, rgba(21, 253, 98, 0.2), rgba(0, 0, 0, 0.1)); }
     .header.sticky-header .header__nav-link {
       transition: all .15s linear; }
       .header.sticky-header .header__nav-link::before {
@@ -322,7 +321,7 @@ body {
   font-size: 2.5rem;
   text-align: right;
   border-right: 3px solid rgba(0, 0, 0, 0.432);
-  padding: 5px 3rem 3rem 0; }
+  padding: 7px 3rem 7px 0; }
 
 .section-three-blocks {
   height: 45rem;
@@ -338,9 +337,9 @@ body {
     opacity: 0; }
     .section-three-blocks__block.block-visible {
       box-shadow: -5px 0 3px -1px rgba(0, 0, 0, 0.35);
-      animation: slide-left 1s ease-in-out forwards;
+      animation: slide-left 1s ease-out forwards;
       animation-delay: 0s;
-      animation: slide-left 1s ease-in-out forwards;
+      animation: slide-left 1s ease-out forwards;
       animation-delay: 0.2s; }
     .section-three-blocks__block--1 {
       background-color: #48f782; }
@@ -349,7 +348,8 @@ body {
     .section-three-blocks__block--3 {
       background-color: #116d30; }
   .section-three-blocks__text {
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Varela Round', sans-serif;
     font-size: 3rem; }
 
 .section-contact {
