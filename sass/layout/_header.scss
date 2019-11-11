@@ -2,71 +2,128 @@
     display: flex;
     // align-content: center;
     height: 10rem;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Varela Round', sans-serif;
     // border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     
     &__item {
         
         display: flex;
-        align-items: center;
+        align-items: stretch;
         color: white;
         font-size: 2rem;
 
         &--nav {
-            display: flex;
             width: 45%;
             flex-direction: row-reverse;
             justify-content: space-around;
+            // align-items: stretch;
             margin-left: auto;
-            margin-right: 10rem;
+            margin-right: 5vw;
         }
 
         &--logo {
-            margin-left: 10rem;
+            margin-left: 10vw;
         }
     }
 
     &__nav-item {
         display: flex;
-        // align-items: center;
         cursor: pointer;
-        background-image: linear-gradient(110deg, transparent 50%, rgba(235, 235, 235, 0.336) 50%);
-        background-position: 0 0;
-        background-size: 220%;
+        // background-image: linear-gradient(110deg, transparent 50%, rgba(235, 235, 235, 0.336) 50%);
+        // background-position: 0 0;
+        // background-size: 220%;
         // border-radius:  5px 0 0 5px;
         // border: 1px solid black;
-        padding: 3px 2.5rem;
+        // padding: 0 2.5rem;
         transition: all .25s linear;
         
-        &:hover {
-            background-position: 85% 40%;
-            color: rgba(0, 0, 0, .75);
-            // text-shadow: 1px 1px 0px rgb(236, 148, 156);
-        }
+        // &:hover {
+        //     background-position: 85% 40%;
+        //     color: rgba(0, 0, 0, .75);
+        //     // text-shadow: 1px 1px 0px rgb(236, 148, 156);
+        // }
     }
 
     &__nav-link {
+        position: relative;
+        overflow: hidden;
+        // display: flex;
+        // line-height: 100%;
+        align-self: center;
+        padding: 1rem 2rem;
+        border-radius: 100px;
+        z-index: 0;
+        // border: 1px solid black;
 
+        &::before {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, .35);
+            border-radius: 100px;
+            width: 100%;
+            margin-left: -2rem;
+            margin-top: -1rem;
+            z-index: -1;
+            height: 100%;
+            transition: all .15s linear;
+            transform: rotate(90deg);
+            transform-origin: top right;
+            
+        }
+
+        &:hover {
+
+            color: rgba(0, 0, 0, .75);
+        
+            &::before {
+                transform: rotate(0);
+            }
+        }
+
+    
     }
 
     &.sticky-header {
         position: fixed;
-        background-image: linear-gradient(to bottom, white , rgba(255, 255, 255, .85));
+        z-index: 100;
+        overflow: hidden;
+        background-image: linear-gradient(to bottom, white , rgba(255, 255, 255, .99985));
         height: 8rem;
         width: 100%;
-        box-shadow: 0 0 6px 1px rgba(0, 0, 0, .3);
+        box-shadow: 0 -2px 7px 1px rgba(0, 0, 0, .2);
         animation: slideDown .25s ease-out forwards;
+        transition: none;
         // animation: turnOnBoxShadow .2s .35s ease-out forwards;
         
         .header__item--nav {
+            justify-content: flex-start;
             color: black;
         }
         
         .header__nav-item {
 
+            // border-left: 1px solid rgba(0, 0, 0, 0.178);
+            box-shadow:  -4px 0 5px -2px rgb(230, 230, 230);
+            transition: all .15s linear;
+
             &:hover {
-                background-position: 0;
-                color: red;
+                z-index: 200;
+                color: white;
+                background-image:linear-gradient(to right, rgba(72, 247, 130, .4), rgba(45, 158, 83, .4));
+                box-shadow: 0 0 5px 2px rgb(219, 219, 219), 0 0 5px -2px rgb(219, 219, 219);
+
+//                 rgb(72, 247, 130)
+// rgb(45, 158, 83)
+// rgb(17, 109, 48)
+            }
+        }
+
+        .header__nav-link {
+
+            transition: all .15s linear;
+
+            &::before {
+                content: none;
             }
         }
 
