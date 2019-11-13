@@ -126,35 +126,44 @@ body {
 
 .standard-section, .section-about, .section-grid-products {
   display: grid;
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
   padding: 10rem 0; }
 
-.product-grid__item {
-  position: relative;
-  height: 13rem;
-  transition: all 0.2s ease-in;
-  overflow: hidden;
-  margin-bottom: 1rem; }
-  .product-grid__item i {
-    position: absolute;
-    top: 50%;
-    left: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    transform: translateY(-50%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all .1s .2s linear; }
-  .product-grid__item:hover {
-    height: 30rem; }
+.product-grid {
+  display: flex;
+  height: 45rem; }
+  .product-grid:hover > .product-grid__item:hover {
+    flex: 8; }
+  .product-grid__item {
+    flex: 1;
+    display: flex;
+    transition: all .4s ease-in; }
+    .product-grid__item i {
+      position: absolute;
+      top: 50%;
+      left: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      transform: translateY(-50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all .1s .2s linear; }
+    .product-grid__item:not(:last-child) {
+      border-right: 3px solid rgba(0, 0, 0, 0.8); }
     .product-grid__item:hover i {
       opacity: 1;
       visibility: visible; }
-  .product-grid__item__content {
-    overflow: hidden; }
-  .product-grid__item img {
-    display: block;
-    object-fit: none; }
+    .product-grid__item img {
+      display: none;
+      width: 100%;
+      max-height: 100%;
+      object-fit: none; }
+  .product-grid__content {
+    overflow: hidden;
+    background-color: green;
+    width: 100%; }
+    .product-grid__content:hover {
+      background-color: brown; }
 
 .header {
   display: flex;
@@ -297,9 +306,9 @@ body {
       visibility: hidden; }
     .fold__scroll-to-main:hover {
       animation-play-state: paused;
-      border-color: rgba(0, 0, 0, 0.65); }
+      border-color: rgba(255, 255, 255, 0.85); }
       .fold__scroll-to-main:hover > i {
-        color: rgba(0, 0, 0, 0.65); }
+        color: rgba(255, 255, 255, 0.85); }
 
 .fold-content {
   display: flex;
@@ -323,6 +332,7 @@ body {
     flex: 1;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
     transform: translateX(-20%);
     opacity: 0; }
     .section-three-blocks__block:not(:first-child) {
